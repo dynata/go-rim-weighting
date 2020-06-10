@@ -4,7 +4,18 @@ GoLang library for RIM (Random Iterative Method) Weighting of Survey data.
 
 Currently, this package only implements the "Grouped" mode - ideal for when your population is clearly grouped into two separate groups, a work (control) group and a goal (exposed) group, the object of weighting is to make the work group conform to the goal group.
 
-NOTE: As we add other modes, the API for the library may change.
+
+NOTE: This is a Golang implementation of a Ruby Gem internally used in Dynata - this was written to aide with the transition to writing more code in Golang. As we make progress in this direction, we plan to add more weighting methods to this package and as a result the API may change.
+
+### Weighter
+
+This package exposes a `Weighter` interface that all implementations will conform to.
+
+```go
+type Weighter interface {
+	Weight(responses []*Response) (*Result, error)
+}
+```
 
 ### Grouped Mode
 
@@ -53,3 +64,14 @@ The `GroupColumn` and `Columns` parameters are required. The `GroupColumn` value
 
 
 The returned respondents are in random order and **_only contain work group members_** (in grouped mode). The goal group members can be assumed to have a weighting of 1.0 and thus need not be returned in the output payload.
+
+### Usage
+
+Please see the tests for example of usage.
+
+
+### To Dos
+
+* Add other weighting methods (Flatspace, nested ...)
+* Clean up and add more comments
+* Add more testing coverage

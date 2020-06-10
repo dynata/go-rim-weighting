@@ -113,7 +113,7 @@ type Result struct {
 	Stats   *Stats
 }
 
-// Weighter ...
+// Weighter interface defines the contract for weighting implementations
 type Weighter interface {
 	Weight(responses []*Response) (*Result, error)
 }
