@@ -117,12 +117,3 @@ type Result struct {
 type Weighter interface {
 	Weight(responses []*Response) (*Result, error)
 }
-
-func contains(array []string, s string) bool {
-	for _, a := range array {
-		if a == s {
-			return true
-		}
-	}
-	return false
-}
