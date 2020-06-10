@@ -104,7 +104,6 @@ type Stats struct {
 	Curbed            float64 `json:"curbed"`
 	MinWeight         float64 `json:"minWeight"`
 	MaxWeight         float64 `json:"maxWeight"`
-	CsvData           string  `json:"csvData"`
 }
 
 // Result ...

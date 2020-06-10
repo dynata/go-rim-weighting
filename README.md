@@ -57,7 +57,13 @@ In grouped mode, we are weighting one group (the "work" group) to conform to ano
     }
 
     fmt.Println(res.Weights) //map[string]float64
+    //map["1000"]: 0.7252778761433506
+    //key == Respondent ID (or response id) and value = Weight
+
     fmt.Println(res.Stats) 
+    /*
+    Example: 
+    &weighting.Stats{GoalRows:487, WorkRows:513, Iterations:2, Rmse:5.1609399352421446e-14, AverageWeight:1.000421552877844, DesignEffect:1.1269921846722624, EffectiveBaseSize:411.2400998141462, Curbed:1.1695906432748537, MinWeight:0.2098982773153223, MaxWeight:3.4068774426214232}*/
 ```
 
 The `GroupColumn` and `Columns` parameters are required. The `GroupColumn` values identify which member is in which group. By default, the `GroupColumn` is 1 for goal and 2 for work. You can customize these values using the `GoalGroupValue` and `WorkGroupValue` parameters. The `Columns` parameter identifies the member attributes (or questions) you wish to weight on.
