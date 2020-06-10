@@ -75,3 +75,8 @@ Please see the tests for example of usage.
 * Add other weighting methods (Flatspace, nested ...)
 * Clean up and add more comments
 * Add more testing coverage
+
+
+### Maintainers
+
+* Saad (saadullah.saeed@dynata.com)
